@@ -1,0 +1,67 @@
+Avaliação (Aula 23/03)
+  - Realizar a modelagem dos sistemas(criação de diagrama Entidade Relacionamento do nível conceitual)
+  - Para cada diagrama criar uma imagem (.png ou .jpeg)
+  - Dentro do repositório pessoal da disciplina do github, criar um pacote da avaliação e disponibilizar essas imagens
+  - Ao final enviar email para "alexz@ufn.edu.br", com assunto "AVALIAÇÃO BD", no corpo do email mandar o link do repositório onde esta as imagens
+
+- Exercício 1 : 
+
+Venda: A transação central que conecta os outros elementos.
+
+Produto: Os itens que estão sendo comercializados no sistema.
+
+Vendedor: O funcionário responsável por efetuar a venda.
+
+Cliente: A pessoa ou empresa para quem a venda é feita.
+
+Prateleira: O local físico de armazenamento onde o produto fica guardado.
+
+==========================================================================
+- Exercício 2 : 
+
+> Condomínio (idCondominio, descricao)
+
+> Unidade (idUnidade, endereco, idCondominio)
+  --> idCondominio relaciona condominio
+
+> Pessoa (idPessoa, nome)
+
+> Aluguel (idAluguel, dataInicio, dataFinal, idPessoa, idUnidade)
+  --> IdPessoa relaciona Pessoa
+  --> idUnidade relaciona Unidade
+
+> Unidade_Pessoa (idUnidade_Pessoa, idPessoa, idUnidade)
+  --> idPessoa relaciona Pessoa
+  --> idUnidade relaciona Unidade
+
+==========================================================================
+- Exercício 3 :
+
+> Departamento (idDepartamento, descricao)
+
+> Empregado (idEmpregado, nome, funcao, gerente)
+  --> gerente relaciona empregado(idEmpregado)
+
+> ProcessadorTexto (idProcessador, nome)
+
+> Secretaria_ProcessadorTexto (Secretaria_ProcessadorTexto, Secreatrio, idProcessador_Texto)
+  --> Secretario relaciona Empregado
+  --> idProcessador_Texto referencia ProcessadorTexto (ProcessadorTexto)
+
+> EngenheiroProjeto (idEngenheiroProjeto, Engenheiro, Projeto)
+  --> Engenheiro relaciona Engenheiro(idEngenheiro)
+  --> Projeto relaciona Projeto(idProjeto)
+
+--------------------------------------
+- Exercício 3 pt. 2 (Montar o enunciado do diagrama) : 
+- Crie um Diagrama Entidade-Relacionamento (DER) para gerenciar os funcionários de uma empresa, atendendo às seguintes regras:
+
+  - A empresa possui Empregados (identificados por nome, CIC e tipo) e Departamentos. Todo empregado trabalha em um único departamento, e um departamento agrupa vários empregados.
+
+  - Alguns empregados possuem cargos específicos e se dividem em: Gerentes, Secretárias e Engenheiros.
+
+  - Um gerente lidera vários empregados, mas um empregado responde a no máximo um gerente.
+
+  - As secretárias operam e possuem domínio sobre um ou mais Processadores de Textos.
+
+  - Os engenheiros possuem um registro profissional (CREA) e podem ser alocados em vários Projetos (e um projeto pode ter vários engenheiros).
